@@ -5,7 +5,7 @@ import os from "os";
 // import { query } from "../../../lib/db"; // keep your existing DB helper path
 // import cloudinary from "../../../lib/cloudinary";
 import { query } from "@lib/db";
-import { cloudinary } from "@lib/cloudinary";
+import  cloudinary  from "@lib/cloudinary";
 
 export const config = {
   api: { bodyParser: false },
