@@ -1,0 +1,28 @@
+{
+  "name": "school-registry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "cloudinary": "^2.7.0",
+    "dotenv": "^17.2.1",
+    "formidable": "^2.1.5",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.3",
+    "next": "15.5.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2"
+  }
+}
