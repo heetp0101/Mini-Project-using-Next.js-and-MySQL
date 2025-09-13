@@ -58,7 +58,7 @@ export const config = {
       // protect these routes
       "/addSchool",
       "/api/addSchool",
-      "/api/*",
+      "/api/:path*",
     ],
   };
   
