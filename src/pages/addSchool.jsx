@@ -165,7 +165,7 @@
 
 
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function AddSchool() {
@@ -178,6 +178,25 @@ export default function AddSchool() {
   } = useForm({ mode: "onBlur" }); // validate on blur
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  // 🔹 Protect route: check session
+  useEffect(() => {
+    async function checkAuth() {
+      try {
+        const res = await fetch("/api/checkSession", {
+          credentials:"include",
+        });
+        if (!res.ok) {
+          router.push(`/login?redirect=/addSchool`);
+        }
+      } catch {
+        router.push(`/login?redirect=/addSchool`);
+      }
+    }
+    checkAuth();
+  }, [router]);
+
+
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -196,6 +215,7 @@ export default function AddSchool() {
       const res = await fetch("/api/addSchool", {
         method: "POST",
         body: formData,
+        credentials: "same-origin",
       });
 
       const result = await res.json();
