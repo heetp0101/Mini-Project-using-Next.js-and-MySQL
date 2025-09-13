@@ -10,15 +10,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
     "cloudinary": "^2.7.0",
+    "cookie": "^1.0.2",
     "dotenv": "^17.2.1",
     "formidable": "^2.1.5",
     "multer": "^2.0.2",
     "mysql2": "^3.14.3",
     "next": "15.5.2",
+    "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-hook-form": "^7.62.0"
+    "react-hook-form": "^7.62.0",
+    "url": "^0.11.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
