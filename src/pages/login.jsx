@@ -103,7 +103,7 @@ export default function LoginPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f4f6f8;
+          background: #333;
           padding: 20px;
         }
         .card {
