@@ -70,7 +70,7 @@ export default function LoginPage() {
 
         <input
           type="email"
-          placeholder="Enter email"
+          placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={otpSent}
@@ -124,14 +124,21 @@ export default function LoginPage() {
           width: 100%;
           padding: 12px;
           margin-bottom: 15px;
-          border: 1px solid #ccc;
+          border: 1px solid #bbb;
           border-radius: 8px;
           font-size: 16px;
-          transition: border 0.3s;
+          transition: border 0.3s, background 0.3s;
+          background: #fdfdfd; /* Slightly off-white so placeholder stands out */
+          color: #222;
         }
         input:focus {
           outline: none;
           border-color: #0070f3;
+          background: #ffffff;
+        }
+        input::placeholder {
+          color: #666; /* Darker placeholder for better visibility */
+          opacity: 1; /* Ensure placeholder isn’t too faint */
         }
         button {
           width: 100%;
