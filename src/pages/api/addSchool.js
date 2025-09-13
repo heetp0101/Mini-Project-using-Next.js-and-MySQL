@@ -6,6 +6,7 @@ import os from "os";
 // import cloudinary from "../../../lib/cloudinary";
 import { query } from "@lib/db";
 import  cloudinary  from "@lib/cloudinary";
+import { requireAuth } from "@lib/auth";
 
 export const config = {
   api: { bodyParser: false },
@@ -26,6 +27,11 @@ export default async function handler(req, res) {
     if (err) {
       console.error("Form parse error:", err);
       return res.status(500).json({ error: "Error parsing form data" });
+    }
+
+    const session = await requireAuth(req, res);
+    if (!session) {
+      return res.status(401).json({ message: "Unauthorized" });
     }
 
     try {
