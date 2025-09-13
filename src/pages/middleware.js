@@ -24,9 +24,9 @@ export async function middleware(req) {
   }
 
   // 2) Check for session cookie
-  const cookie = req.headers.get("cookie") || "";
-  const cookies = parse(cookie);
-  const token = cookies.session_token;
+//   const cookie = req.headers.get("cookie") || "";
+//   const cookies = parse(cookie);
+  const token = req.cookies.get("session_token")?.value;
 
   if (!token) {
     // redirect to /login if not logged in
